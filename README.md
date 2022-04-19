@@ -2,3 +2,10 @@
 
 _______________________________________________________
 
+
+
+* Classe e Objeto:
+* Associação de Classes 
+* Herança
+* Polimorfismo
+* Encapsulamento
