@@ -1,25 +1,29 @@
 package poo.model;
 
-public class Cliente {
+import java.util.ArrayList;
+import java.util.List;
 
-    public Integer codigo;
-    public String nome;
-    public String cpf;
+public class Cliente extends Pessoa{
 
-    public String endereco1;
-    public String numero1;
-    public String complemento1;
-    public String bairro1;
-    public String estado1;
-    public String cep1;
+    public String numCartao;
+  private List<Endereco> enderecos;
 
-    public String endereço2;
-    public String numero2;
-    public String complemento2;
-    public String bairro2;
-    public String estado2;
-    public String cep2;
+  //Aqui ele valida para não ser nulo.
+  public void adcionarEndereco(Endereco endereco) {
+      if (endereco == null) {
+          throw new NullPointerException("O Endereço não pode ser nulo!");
+      }
+      if (endereco.cep == null) {
+          throw new NullPointerException("O Cep não pode ser nulo!");
+      }
+      getEnderecos().add(endereco);
+  }
 
-
+ private List<Endereco> getEnderecos(){
+     if(enderecos == null){
+         enderecos = new ArrayList<Endereco>();
+     }
+      return enderecos;
+ }
 
 }
